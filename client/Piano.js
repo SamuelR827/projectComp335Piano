@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
+// https://tonejs.github.io/
+import * as Tone from 'tone'
 
-const c_note = new Audio("sounds/c3.mp3")
-const d_note = new Audio("sounds/d3.mp3")
-const e_note = new Audio("sounds/e3.mp3")
-const f_note = new Audio("sounds/f3.mp3")
-const g_note = new Audio("sounds/g3.mp3")
-const a_note = new Audio("sounds/a4.mp3")
-const b_note = new Audio("sounds/b4.mp3")
-
+// setup sound synth
+const synth = new Tone.Synth().toDestination();
 
 // function for each key
 function Key({ value, onKeyClick, isBlack }) {
@@ -29,31 +25,31 @@ function Piano({ keys }) {
     // TODO Add sound to play, need to figure out how to do that
     if (keyIndex === 0){
         console.log("c key pressed");
-        c_note.play()
+        synth.triggerAttackRelease("C3", "8n");
     }
     else if (keyIndex === 1){
         console.log("d key pressed")
-        d_note.play()
+        synth.triggerAttackRelease("D3", "8n");
     }
     else if (keyIndex === 2){
       console.log("e key pressed")
-      e_note.play()
+      synth.triggerAttackRelease("E3", "8n");
     }
     else if (keyIndex === 3){
       console.log("f key pressed")
-      f_note.play()
+      synth.triggerAttackRelease("F3", "8n");
     }
     else if (keyIndex === 4){
       console.log("g key pressed")
-      g_note.play()
+      synth.triggerAttackRelease("G3", "8n");
     }
     else if (keyIndex === 5){
       console.log("a key pressed")
-      a_note.play()
+      synth.triggerAttackRelease("A3", "8n");
     }
     else if (keyIndex === 6){
       console.log("b key pressed")
-      b_note.play()
+      synth.triggerAttackRelease("B3", "8n");
     }
   };
 
