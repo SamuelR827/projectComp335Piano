@@ -28,28 +28,48 @@ function Piano({ keys }) {
         synth.triggerAttackRelease("C3", "8n");
     }
     else if (keyIndex === 1){
-        console.log("d key pressed")
-        synth.triggerAttackRelease("D3", "8n");
+        console.log("c# key pressed")
+        synth.triggerAttackRelease("C#3", "8n");
     }
     else if (keyIndex === 2){
+      console.log("d key pressed")
+      synth.triggerAttackRelease("D3", "8n");
+    }
+    else if (keyIndex === 3){
+      console.log("d# key pressed")
+      synth.triggerAttackRelease("D#3", "8n");
+    }
+    else if (keyIndex === 4){
       console.log("e key pressed")
       synth.triggerAttackRelease("E3", "8n");
     }
-    else if (keyIndex === 3){
+    else if (keyIndex === 5){
       console.log("f key pressed")
       synth.triggerAttackRelease("F3", "8n");
     }
-    else if (keyIndex === 4){
+    else if (keyIndex === 6){
+      console.log("f# key pressed")
+      synth.triggerAttackRelease("F#3", "8n");
+    }
+    else if (keyIndex === 7){
       console.log("g key pressed")
       synth.triggerAttackRelease("G3", "8n");
     }
-    else if (keyIndex === 5){
-      console.log("a key pressed")
-      synth.triggerAttackRelease("A3", "8n");
+    else if (keyIndex === 8){
+      console.log("g# key pressed")
+      synth.triggerAttackRelease("G#3", "8n");
     }
-    else if (keyIndex === 6){
+    else if (keyIndex === 9){
+      console.log("a key pressed")
+      synth.triggerAttackRelease("A4", "8n");
+    }
+    else if (keyIndex === 10){
+      console.log("a# key pressed")
+      synth.triggerAttackRelease("A#4", "8n");
+    }
+    else if (keyIndex === 11){
       console.log("b key pressed")
-      synth.triggerAttackRelease("B3", "8n");
+      synth.triggerAttackRelease("B4", "8n");
     }
   };
 
@@ -59,12 +79,17 @@ function Piano({ keys }) {
       <div className="piano">
         {/* each key is an element of a list */}
         <Key value={keys[0]} onKeyClick={() => handleClick(0)} />
-        <Key value={keys[1]} onKeyClick={() => handleClick(1)} />
+        <Key value={keys[1]} isBlack = 'black' onKeyClick={() => handleClick(1)} />
         <Key value={keys[2]} onKeyClick={() => handleClick(2)} />
-        <Key value={keys[3]} onKeyClick={() => handleClick(3)} />
+        <Key value={keys[3]} isBlack = 'black'onKeyClick={() => handleClick(3)} />
         <Key value={keys[4]} onKeyClick={() => handleClick(4)} />
         <Key value={keys[5]} onKeyClick={() => handleClick(5)} />
-        <Key value={keys[6]} onKeyClick={() => handleClick(6)} />
+        <Key value={keys[6]} isBlack = 'black'onKeyClick={() => handleClick(6)} />
+        <Key value={keys[7]} onKeyClick={() => handleClick(7)} />
+        <Key value={keys[8]} isBlack = 'black'onKeyClick={() => handleClick(8)} />
+        <Key value={keys[9]} onKeyClick={() => handleClick(9)} />
+        <Key value={keys[10]} isBlack = 'black'onKeyClick={() => handleClick(10)} />
+        <Key value={keys[11]} onKeyClick={() => handleClick(11)} />
       </div>
     </>
   );
