@@ -71,6 +71,7 @@
 
 .key.black {
   background-color: black; 
+  color: white;
   width: 50px; 
   height: 150px; 
   position: relative;
