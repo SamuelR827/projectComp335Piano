@@ -61,15 +61,15 @@ function Piano({ keys }) {
     }
     else if (keyIndex === 9){
       console.log("a4 key pressed")
-      synth.triggerAttackRelease("A4", "8n");
+      synth.triggerAttackRelease("A3", "8n");
     }
     else if (keyIndex === 10){
       console.log("a#4 key pressed")
-      synth.triggerAttackRelease("A#4", "8n");
+      synth.triggerAttackRelease("A#3", "8n");
     }
     else if (keyIndex === 11){
       console.log("b4 key pressed")
-      synth.triggerAttackRelease("B4", "8n");
+      synth.triggerAttackRelease("B3", "8n");
     }
 
     //buffer
@@ -112,15 +112,15 @@ function Piano({ keys }) {
     }
     else if (keyIndex === 21){
     console.log("a5 key pressed")
-    synth.triggerAttackRelease("A5", "8n");
+    synth.triggerAttackRelease("A4", "8n");
     }
     else if (keyIndex === 22){
     console.log("a#5 key pressed")
-    synth.triggerAttackRelease("A#5", "8n");
+    synth.triggerAttackRelease("A#4", "8n");
     }
     else if (keyIndex === 23){
     console.log("b5 key pressed")
-    synth.triggerAttackRelease("B5", "8n");
+    synth.triggerAttackRelease("B4", "8n");
     }
   };
 
