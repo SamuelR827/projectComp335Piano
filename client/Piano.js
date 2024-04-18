@@ -74,54 +74,54 @@ function Piano({ keys }) {
 
     //buffer
 
-    if (keyIndex === 12){
+    else if (keyIndex === 12){
       console.log("c4 key pressed");
       synth.triggerAttackRelease("C4", "8n");
-  }
-  else if (keyIndex === 13){
+    }
+    else if (keyIndex === 13){
       console.log("c#4 key pressed")
       synth.triggerAttackRelease("C#4", "8n");
-  }
-  else if (keyIndex === 14){
+    }
+    else if (keyIndex === 14){
     console.log("d4 key pressed")
     synth.triggerAttackRelease("D4", "8n");
-  }
-  else if (keyIndex === 15){
+    }
+    else if (keyIndex === 15){
     console.log("d#4 key pressed")
     synth.triggerAttackRelease("D#4", "8n");
-  }
-  else if (keyIndex === 16){
+    }
+    else if (keyIndex === 16){
     console.log("e4 key pressed")
     synth.triggerAttackRelease("E4", "8n");
-  }
-  else if (keyIndex === 17){
+    }
+    else if (keyIndex === 17){
     console.log("f4 key pressed")
     synth.triggerAttackRelease("F4", "8n");
-  }
-  else if (keyIndex === 18){
+    }
+    else if (keyIndex === 18){
     console.log("f#4 key pressed")
     synth.triggerAttackRelease("F#4", "8n");
-  }
-  else if (keyIndex === 19){
+    }
+    else if (keyIndex === 19){
     console.log("g4 key pressed")
     synth.triggerAttackRelease("G4", "8n");
-  }
-  else if (keyIndex === 20){
+    }
+    else if (keyIndex === 20){
     console.log("g#4 key pressed")
     synth.triggerAttackRelease("G#4", "8n");
-  }
-  else if (keyIndex === 21){
+    }
+    else if (keyIndex === 21){
     console.log("a5 key pressed")
     synth.triggerAttackRelease("A5", "8n");
-  }
-  else if (keyIndex === 22){
+    }
+    else if (keyIndex === 22){
     console.log("a#5 key pressed")
     synth.triggerAttackRelease("A#5", "8n");
-  }
-  else if (keyIndex === 23){
+    }
+    else if (keyIndex === 23){
     console.log("b5 key pressed")
     synth.triggerAttackRelease("B5", "8n");
-  }
+    }
   };
 
   // render the piano with all the keys
