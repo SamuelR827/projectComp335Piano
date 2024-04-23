@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // https://tonejs.github.io/
 import * as Tone from 'tone'
 
-// setup sound synth with envelope
+// setup sound synth from tone.js
 const synth = new Tone.Synth({
   envelope: {
     attack: 0.01,
@@ -14,8 +14,8 @@ const synth = new Tone.Synth({
 
 // function for each key
 function Key({ value, onKeyClick, isBlack, isPressed}) {
-  {/* Added a field for the black keys style To be Implemented */}
   return (
+    // return button is black or not, or pressed or not
     <button className={`key ${isBlack ? 'black' : ''} ${isPressed ? 'pressed': ''}`} 
     onClick={onKeyClick}>
       {value}
@@ -25,15 +25,14 @@ function Key({ value, onKeyClick, isBlack, isPressed}) {
 
 // Main function
 function Piano({ keys }) {
+    // addkey down event for keyboard press
     window.addEventListener("keydown", pianoKeyboard)
+    // keyboard state -> handles highlights of keys, starts as empty
     const [pressedKeyIndex, setPressedKeyIndex] = useState(null);
-    // Sounds found from Reddit user SingleInfinity
-    // https://www.reddit.com/r/piano/comments/3u6ke7/heres_some_midi_and_mp3_files_for_individual/
 
   // handeClick of each individual key by getting index
   const keyPress = (keyIndex) => {
     setPressedKeyIndex(keyIndex);
-    // TODO Add sound to play, need to figure out how to do that
     if (keyIndex === 0){
         console.log("c3 key pressed");
         synth.triggerAttackRelease("C3", "8n");
@@ -133,16 +132,18 @@ function Piano({ keys }) {
   };
 
   function pianoKeyboard(event){
+    // Key map each key maps to an index
     const keyMap = {
       81: 0, 50: 1, 87: 2, 51: 3, 69: 4, 82: 5, 53: 6, 84: 7, 54: 8, 89: 9,
       55: 10, 85: 11, 73: 12, 57: 13, 79: 14, 48: 15, 80: 16, 219: 17, 61: 18, 
       221: 19, 65: 20, 90: 21, 83: 22, 88: 23
-       // Update this map with the rest of the key codes
     };
-
+    // get the key index from the map
     const keyIndex = keyMap[event.keyCode];
 
+    // handle not registered keys 
     if (keyIndex !== undefined) {
+      //play corresponding key with index
       keyPress(keyIndex);
       }
     }
@@ -152,7 +153,7 @@ function Piano({ keys }) {
   return (
     <>
       <div className="piano">
-        {/* each key is an element of a list */}
+        {/* each key is an element of a list*/}
         <Key value={keys[0]} isPressed={pressedKeyIndex === 0} onKeyClick={() => keyPress(0)} />
         <Key value={keys[1]} isPressed={pressedKeyIndex === 1} isBlack = 'black' onKeyClick={() => keyPress(1)} />
         <Key value={keys[2]} isPressed={pressedKeyIndex === 2} onKeyClick={() => keyPress(2)} />
